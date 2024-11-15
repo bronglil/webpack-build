@@ -28,7 +28,7 @@ To build and run this project, you will need:
 
   ## Getting Started
   
-## 1 clone the repository
+## 1.clone the repository
 Clone the project to your local machine:
 
 ```
