@@ -28,7 +28,7 @@ To build and run this project, you will need:
 
   ## Getting Started
   
-1. Clone the Repository
+## 1 clone the repository
 Clone the project to your local machine:
 
 ```
@@ -36,14 +36,14 @@ git clone git@github.com:bronglil/webpack-build.git
 
 ```
 
-2. Install Dependencies
+## 2. Install Dependencies
    Navigate to the project directory and install the required dependencies:
 
 ```
 cd <project-folder>
 npm install
 ```
-3. Start the Development Server
+## 3. Start the Development Server
 Run the application in development mode:
 ```
 npm start
@@ -107,6 +107,7 @@ root
 Contributions are welcome! Please follow these steps:
 
 1- Fork the repository:
+
 2- Create a new branch:
 
 ```
