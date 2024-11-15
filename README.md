@@ -78,7 +78,7 @@ Unit tests are written using Jest and React Testing Library.
 - Unit Testing: Included Jest and React Testing Library setup.
 - Optimized Production Builds: Minimized and efficient assets for deployment.
 
-## Highlights:
+## Folder Structure:
 - Demonstrates a non-trivial codebase.
 - Focused on manual React + Webpack configurations for learning.
 
