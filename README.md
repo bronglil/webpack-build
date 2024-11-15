@@ -110,17 +110,17 @@ Contributions are welcome! Please follow these steps:
 2- Create a new branch:
 
 ```
-git checkout -b feature/your-feature-name
+git checkout -b branch-name
 ```
 
 3- Commit your changes:
 ```
-git commit -m "Add your message here"
+git commit -m "new message here"
 ```
 
 4- Push to the branch:
 ```
-git push origin feature/your-feature-name
+git push origin branch
 ```
 5- Open a Pull Request:
 
