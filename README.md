@@ -1,50 +1,134 @@
+This project is a **React application** built with a custom **Webpack** and **Babel** setup. It includes a structured React component styled with CSS and focuses on an educational approach to configuring a React build process manually.
+
+---
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Getting Started](#getting-started)
+   - [Clone the Repository](#1-clone-the-repository)
+   - [Install Dependencies](#2-install-dependencies)
+   - [Start the Development Server](#3-start-the-development-server)
+3. [Building for Production](#building-for-production)
+4. [Testing](#testing)
+5. [Project Overview](#project-overview)
+6. [Folder Structure](#folder-structure)
+7. [Technologies Used](#technologies-used)
+8. [Contribution](#contribution)
+9. [License](#license)
+
+
 ## Prerequisites
 
 To build and run this project, you will need:
 
 - **Node.js** (version 14 or above)
 - **npm** (Node Package Manager, which comes with Node.js)
+- **Serve** (Optional: for serving production builds locally):
 
-## Instruction to Start the Project
+  ## Getting Started
+  
+1. Clone the Repository
+Clone the project to your local machine:
 
-- **Run Project**    npm start or npm run start
-- **Build Project**  npm build or npm run build
-- **Test Project**   npm test or npm run test
-- **serve -s dist**    serve -s dist  <!-- - (Serves the dist folder locally to test the production build (only if serve is installed) -->
+```
+git clone git@github.com:bronglil/webpack-build.git
 
-# Webpack Assignment
+```
 
-This project is a **React application** using a custom Webpack setup. It is built to demonstrate a non-trivial codebase with a functional React component that includes a button, title, and description, styled with CSS. The primary objective is educational, illustrating how to configure a build process for a React project using Webpack and Babel without relying on `create-react-app`.
+2. Install Dependencies
+   Navigate to the project directory and install the required dependencies:
+
+```
+cd <project-folder>
+npm install
+```
+3. Start the Development Server
+Run the application in development mode:
+```
+npm start
+```
+This will start the Webpack Dev Server and open the app in your default browser.
+
+## Building for Production
+To create an optimized production build:
+```
+npm run build
+```
+
+The production files will be output to the dist directory.
+You can test the production build locally using Serve:
+
+```
+serve -s dist
+```
+
+## Testing
+Run unit tests using the following command:
+```
+npm test
+```
+Unit tests are written using Jest and React Testing Library.
 
 ## Project Overview
+## Key Features:
+- Custom Webpack Configuration: Fully manual setup for development and production environments. 
+- Hot Module Replacement: Automatically updates modules in development.
+- CSS Support: Configured CSS loaders for styling components.
+- Unit Testing: Included Jest and React Testing Library setup.
+- Optimized Production Builds: Minimized and efficient assets for deployment.
 
-This project showcases:
-- **Webpack** for managing and bundling assets.
-- **Babel** to transpile JSX and ES6+ syntax for browser compatibility.
-- **Webpack Dev Server** to provide a local development environment with hot-reloading.
-- **Jest** and **React Testing Library** for unit testing.
+## Highlights:
+- Demonstrates a non-trivial codebase.
+- Focused on manual React + Webpack configurations for learning.
 
-### Key Features
-- Custom Webpack configuration for development and production builds.
-- CSS and JSX support through Babel and CSS loaders.
-- Unit tests for React components.
-- Simple component structure with scoped styling for maintainable code.
+```
+root
+├── src
+│   ├── components    # React components
+│   ├── .styles        # CSS files
+│   ├── .test.js        # jest testing file
+│   └── index.js      # Entry point for the app
+├── dist              # Production build output
+├── package.json      # Project dependencies and scripts
+├── webpack.config.js # Webpack configuration
+└── README.md         # Documentation
+```
 
-## Project Scope
+## Technologies Used
+- React: Library for building user interfaces.
+- Webpack: Bundler for managing assets and modules.
+- Babel: JavaScript compiler for modern syntax and JSX.
+- Jest: Testing framework for JavaScript.
 
-This project meets the non-trivial codebase requirement by:
-1. Including a structured and styled React component.
-2. Relying on multiple dependencies (e.g., Webpack, Babel, Jest).
-3. Illustrating a build setup for both local development and production deployment.
+</hr>
 
-### Technologies and External Libraries
+## Contribution
+Contributions are welcome! Please follow these steps:
 
-- **React**: For building the user interface.
-- **React DOM**: For rendering React components to the DOM.
-- **Webpack**: For bundling JavaScript, CSS, and other assets.
-- **Babel**: To convert JSX and modern JavaScript into browser-compatible code.
-- **Jest**: For running tests.
-- **React Testing Library**: For testing React components.
+1- Fork the repository:
+2- Create a new branch:
 
-This configuration provides a foundation for building React applications while focusing on manual setup and control over the build process.
+```
+git checkout -b feature/your-feature-name
+```
 
+3- Commit your changes:
+```
+git commit -m "Add your message here"
+```
+
+4- Push to the branch:
+```
+git push origin feature/your-feature-name
+```
+5- Open a Pull Request:
+
+
+## License
+This project is licensed under the MIT License.
+
+```
+
+This comprehensive README covers everything a user or contributor needs to get started, from setup to understanding the project structure and technologies used. Let me know if you need further customizations!
+```
