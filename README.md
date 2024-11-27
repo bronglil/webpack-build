@@ -17,7 +17,6 @@ This project is a **React application** built with a custom **Webpack** and **Ba
 8. [Contribution](#contribution)
 9. [License](#license)
 
-
 ## Prerequisites
 
 To build and run this project, you will need:
@@ -27,8 +26,9 @@ To build and run this project, you will need:
 - **Serve** (Optional: for serving production builds locally):
 
   ## Getting Started
-  
+
 ## 1.clone the repository
+
 Clone the project to your local machine:
 
 ```
@@ -37,21 +37,28 @@ git clone git@github.com:bronglil/webpack-build.git
 ```
 
 ## 2. Install Dependencies
-   Navigate to the project directory and install the required dependencies:
+
+Navigate to the project directory and install the required dependencies:
 
 ```
 cd <project-folder>
 npm install
 ```
+
 ## 3. Start the Development Server
+
 Run the application in development mode:
+
 ```
 npm start
 ```
+
 This will start the Webpack Dev Server and open the app in your default browser.
 
 ## Building for Production
+
 To create an optimized production build:
+
 ```
 npm run build
 ```
@@ -64,21 +71,27 @@ serve -s dist
 ```
 
 ## Testing
+
 Run unit tests using the following command:
+
 ```
 npm test
 ```
+
 Unit tests are written using Jest and React Testing Library.
 
 ## Project Overview
+
 ## Key Features:
-- Custom Webpack Configuration: Fully manual setup for development and production environments. 
+
+- Custom Webpack Configuration: Fully manual setup for development and production environments.
 - Hot Module Replacement: Automatically updates modules in development.
 - CSS Support: Configured CSS loaders for styling components.
 - Unit Testing: Included Jest and React Testing Library setup.
 - Optimized Production Builds: Minimized and efficient assets for deployment.
 
 ## Folder Structure:
+
 - Demonstrates a non-trivial codebase.
 - Focused on manual React + Webpack configurations for learning.
 
@@ -96,6 +109,7 @@ root
 ```
 
 ## Technologies Used
+
 - React: Library for building user interfaces.
 - Webpack: Bundler for managing assets and modules.
 - Babel: JavaScript compiler for modern syntax and JSX.
@@ -104,6 +118,7 @@ root
 </hr>
 
 ## Contribution
+
 Contributions are welcome! Please follow these steps:
 
 1- Fork the repository:
@@ -115,18 +130,21 @@ git checkout -b branch-name
 ```
 
 3- Commit your changes:
+
 ```
 git commit -m "new message here"
 ```
 
 4- Push to the branch:
+
 ```
 git push origin branch
 ```
+
 5- Open a Pull Request:
 
-
 ## License
+
 This project is licensed under the MIT License.
 
 ```

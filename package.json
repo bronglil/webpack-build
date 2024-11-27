@@ -11,7 +11,8 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "pc": "yarn lint --fix && yarn format"
+    "pc": "yarn lint --fix && yarn format",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "sajid",
@@ -32,10 +33,13 @@
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
     "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
     "prettier": "3.4.1",
+    "react-scripts": "^5.0.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
@@ -48,5 +52,17 @@
     "transform": {
       "^.+\\.[jt]sx?$": "babel-jest"
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
