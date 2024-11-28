@@ -1,0 +1,110 @@
+/* General body and layout settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+/* App container styling */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Header Title */
+.app-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Description text */
+.app-description {
+    font-size: 1.2rem;
+    color: #607d8b;
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.app-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.app-button:hover {
+    background-color: #0056b3;
+}
+
+/* Error and loading states */
+.error-state,
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error-state h1,
+.loading-state h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.error-state p,
+.loading-state p {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Data Container with posts */
+.data-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+/* Post item styling */
+.post-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-item h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-item p {
+    font-size: 1rem;
+    color: #555;
+}
