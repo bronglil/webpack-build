@@ -147,11 +147,6 @@ git push origin branch
 
 5- Open a Pull Request:
 
-## License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-This project is licensed under the MIT License.
-
 ## ESLint and Husky
 
 ### **ESLint**:
@@ -184,17 +179,16 @@ Husky is used to enforce pre-commit and pre-push hooks for your Git workflow. It
   - If you have Husky configured in your project, you don't need to manually trigger the hooks. Husky automatically runs the `lint` and `format` scripts when you make a commit or push.
 
   - You can also trigger Husky’s actions manually by running:
-   
+
   ```bash
     npm run pc
-    ```
-    This ensures that Husky hooks are installed and ready to be used.
+  ```
+
+  This ensures that Husky hooks are installed and ready to be used.
 
 ### **How to Configure Husky** (Optional):
 
 If you need to customize Husky's hooks, you can modify the `.husky/` folder in the root directory of your project. The hooks are defined there and can be edited according to your preferences.
-
-
 
 ## Generating JSDoc Reference Documentation
 
@@ -208,38 +202,49 @@ To generate reference documentation for this project, we use **JSDoc**, a tool t
 
    ```bash
    yarn add --dev jsdoc
- ```
+   ```
+
+````
 2. **Run Script**
-  - Run the following command to generate the JSDoc documentation:
-  
-   ```bash
-   yarn generate-docs
- ```
+ - Run the following command to generate the JSDoc documentation:
+
+  ```bash
+  yarn generate-docs
+````
 
 ## NPM Scripts
 
 Here are the available NPM scripts for managing your project:
 
-- **`npm run test`**: Run unit tests using **Jest** in watch mode. This will continuously monitor the tests and re-run them whenever the files change.
-- **`npm run serve`**: Start the app in development mode using **react-scripts**. This will run the app on a local development server with hot reloading.
+- **`npm run test / yarn test`**: Run unit tests using **Jest** in watch mode. This will continuously monitor the tests and re-run them whenever the files change.
+- **`npm run serve / yarn serve`**: Start the app in development mode using **react-scripts**. This will run the app on a local development server with hot reloading.
 
-- **`npm run start`**: Start the **Webpack Dev Server** in development mode. It will serve the app with live reloading and efficient bundling.
+- **`npm run start/ yarn start`**: Start the **Webpack Dev Server** in development mode. It will serve the app with live reloading and efficient bundling.
 
-- **`npm run build`**: Build the project for **production** using **Webpack**. This will create a production-ready bundle in the `dist` folder, with optimized assets and code.
+- **`npm run build / yarn`**: Build the project for **production** using **Webpack**. This will create a production-ready bundle in the `dist` folder, with optimized assets and code.
 
 - **`npm run eject`**: Eject the configuration for **Create React App** (if used). This will give you full control over the configuration but is irreversible.
 
-- **`npm run lint`**: Run **ESLint** to check for code quality issues and potential errors in your JavaScript and TypeScript files.
+- **`npm run lint / yarn lint`**: Run **ESLint** to check for code quality issues and potential errors in your JavaScript and TypeScript files.
 
-- **`npm run lint:fix`**: Automatically fix linting issues using **ESLint**. This will fix any issues that can be resolved automatically, such as formatting and simple errors.
+- **`npm run lint:fix / yarn lint:fix`**: Automatically fix linting issues using **ESLint**. This will fix any issues that can be resolved automatically, such as formatting and simple errors.
 
-- **`npm run format`**: Format your code using **Prettier**. This ensures consistent code formatting across your project.
+- **`npm run format / yarn format`**: Format your code using **Prettier**. This ensures consistent code formatting across your project.
 
-- **`npm run pc`**: Lint and fix the code, then format it using **Prettier**. This is a combined script to ensure your code is both lint-free and well-formatted in one command.
-- **`generate-docs`**: Generate documentation for your project using **JSDoc**. This will generate documentation for your JavaScript and TypeScript files based on the comments in your code.
+- **`npm run pc/ yarn pc`**: Lint and fix the code, then format it using **Prettier**. This is a combined script to ensure your code is both lint-free and well-formatted in one command.
+- **`npm generate-docs / yarn  generate-docs`**: Generate documentation for your project using **JSDoc**. This will generate documentation for your JavaScript and TypeScript files based on the comments in your code.
+
 ---
 
 These scripts provide an easy way to manage and maintain your codebase, ensuring that it's well-tested, properly formatted, and following best practices.
+
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This project is licensed under the MIT License.
+
+
 
 ```
 This comprehensive README covers everything a user or contributor needs to get started, from setup to understanding the project structure and technologies used. Let me know if you need further customizations!
