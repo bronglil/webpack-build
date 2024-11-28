@@ -11,15 +11,16 @@ export default function Content() {
   useEffect(() => {
     const loadData = async () => {
       logWithColor('trace', 'Calling fetchData');
-      
+
       try {
         const result = await fetchData(); // Call the fetchData function
-
         setData(result);
         setLoading(false);
-        
       } catch (error) {
-        logWithColor('error', `Error state: Failed to load data ${error.message}`);
+        logWithColor(
+          'error',
+          `Error state: Failed to load data ${error.message}`,
+        );
         setError(error.message);
         setLoading(false);
       }
