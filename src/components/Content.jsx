@@ -1,24 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Content.css';
-import log from 'loglevel';
-import chalk from 'chalk';
-
-const levelColors = {
-  trace: chalk.gray,
-  debug: chalk.blue,
-  info: chalk.green,
-  warn: chalk.yellow,
-  error: chalk.red,
-  silent: chalk.white,
-};
-
-const customLogger = log.getLogger('app-logger');
-customLogger.setLevel('trace');
-
-const logWithColor = (level, message) => {
-  const coloredMessage = levelColors[level](message);
-  customLogger[level](coloredMessage);
-};
+import { logWithColor, downloadLogFile } from '../utils/logger'; // Import the logger utility
+import fetchData from '../utils/fetchData'; // Import the fetchData utility
 
 export default function Content() {
   const [data, setData] = useState(null);
@@ -26,50 +9,23 @@ export default function Content() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
-
-      logWithColor('trace', 'Entering fetchData function');
-
+    const loadData = async () => {
+      logWithColor('trace', 'Calling fetchData');
+      
       try {
-        logWithColor('debug', `Starting to fetch data from: ${apiUrl}`);
-
-        const response = await fetch(apiUrl);
-
-        if (!response.ok) {
-          logWithColor(
-            'warn',
-            `The response was not ok, received status: ${response.status}`,
-          );
-          throw new Error('Failed to fetch data');
-        }
-
-        const result = await response.json();
-
-        logWithColor(
-          'debug',
-          `Data fetched successfully, number of posts: ${result.length}`,
-        );
-        logWithColor(
-          'trace',
-          `Fetched data: ${JSON.stringify(result.slice(0, 3))}`,
-        );
+        const result = await fetchData(); // Call the fetchData function
 
         setData(result);
         setLoading(false);
-
-        if (result.length === 0) {
-          logWithColor('warn', 'No posts found in the API response');
-        }
+        
       } catch (error) {
-        logWithColor('error', `Error during data fetching: ${error.message}`);
+        logWithColor('error', `Error state: Failed to load data ${error.message}`);
         setError(error.message);
         setLoading(false);
       }
     };
 
-    logWithColor('trace', 'Calling fetchData');
-    fetchData();
+    loadData();
 
     return () => {
       logWithColor('trace', 'Cleaning up after fetchData');
@@ -102,7 +58,9 @@ export default function Content() {
       <p className="app-description">
         A beautifully crafted example using React and Webpack.
       </p>
-      <button className="app-button">Get Started</button>
+      <button className="app-button" onClick={downloadLogFile}>
+        Download Logs
+      </button>
 
       <div className="data-container">
         <h2>Fetched Data:</h2>
