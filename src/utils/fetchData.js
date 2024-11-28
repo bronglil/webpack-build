@@ -1,5 +1,19 @@
 import { logWithColor } from './logger';
 
+/**
+ * Fetches data from the JSONPlaceholder API.
+ * This function fetches posts data from the API and logs the process.
+ *
+ * @function
+ * @async
+ * @returns {Promise<Array>} - A promise that resolves to an array of posts from the API.
+ * @throws {Error} - Throws an error if the fetch operation fails or if the response is not ok.
+ * 
+ * @example
+ * fetchData()
+ *   .then(data => console.log(data))
+ *   .catch(error => console.error(error));
+ */
 const fetchData = async () => {
   const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
   logWithColor('trace', 'Entering fetchData function');
