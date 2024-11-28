@@ -39,12 +39,12 @@ module.exports = {
 
   resolve: {
     fallback: {
-      "os": false,   // Disable os module
-      "fs": false,   // Disable fs module
-      "http": false,  // Disable http module
-      "https": false, // Disable https module
-      "path": require.resolve("path-browserify"), // Polyfill path module
-      "zlib": false,  // Disable zlib module
+      os: false, // Disable os module
+      fs: false, // Disable fs module
+      http: false, // Disable http module
+      https: false, // Disable https module
+      path: require.resolve('path-browserify'), // Polyfill path module
+      zlib: false, // Disable zlib module
     },
   },
 

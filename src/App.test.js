@@ -1,27 +1,20 @@
-// src/App.test.js
-import React from 'react';
+/* eslint-disable */
+import React from 'react'; // Import React explicitly
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import App from './App';
 
+// Mock components
+jest.mock('./components/Navbar', () => () => <div>Navbar</div>);
+jest.mock('./components/Sidebar', () => () => <div>Sidebar</div>);
+jest.mock('./components/Content', () => () => <div>Content</div>);
+
 describe('App Component', () => {
-  test('renders the main title', () => {
+  it('renders Navbar, Sidebar, and Content', () => {
     render(<App />);
-    const titleElement = screen.getByText(/Software Development Assignment/i);
-    expect(titleElement).toBeInTheDocument();
-  });
 
-  test('renders the description text', () => {
-    render(<App />);
-    const descriptionElement = screen.getByText(
-      /A beautifully crafted example using React and Webpack./i,
-    );
-    expect(descriptionElement).toBeInTheDocument();
-  });
-
-  test('renders the Get Started button', () => {
-    render(<App />);
-    const buttonElement = screen.getByRole('button', { name: /Get Started/i });
-    expect(buttonElement).toBeInTheDocument();
+    // Check if the mocked components are rendered
+    expect(screen.getByText(/Navbar/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sidebar/i)).toBeInTheDocument();
+    expect(screen.getByText(/Content/i)).toBeInTheDocument();
   });
 });

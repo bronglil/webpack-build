@@ -1,6 +1,6 @@
 {
     "presets": [
-        "@babel/preset-env", // Preset for transpiling modern JavaScript syntax (ES6+)
-        "@babel/preset-react" // Preset for transpiling JSX syntax used by React
+        "@babel/preset-env",
+        "@babel/preset-react"
     ]
 }

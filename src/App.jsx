@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
 
-
 function App() {
   const [state, setState] = useState();
   return (
@@ -13,7 +12,7 @@ function App() {
       <Navbar />
       <Sidebar />
       <main>
-      <Content/>
+        <Content />
       </main>
     </div>
   );
