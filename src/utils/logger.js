@@ -15,7 +15,12 @@ customLogger.setLevel('trace');
 
 const logMessages = [];
 
-const logWithColor = (level, message, tags = [], format = '{timestamp} - [{level}] {tags} {message}') => {
+const logWithColor = (
+  level,
+  message,
+  tags = [],
+  format = '{timestamp} - [{level}] {tags} {message}',
+) => {
   const timestamp = new Date().toISOString();
 
   if (!levelColors[level]) {
@@ -23,7 +28,8 @@ const logWithColor = (level, message, tags = [], format = '{timestamp} - [{level
     level = 'info';
   }
 
-  const coloredTags = tags.length > 0 ? tags.map(tag => chalk.cyan(`[${tag}]`)).join(' ') : '';
+  const coloredTags =
+    tags.length > 0 ? tags.map((tag) => chalk.cyan(`[${tag}]`)).join(' ') : '';
   const coloredMessage = levelColors[level](message);
 
   const formattedMessage = format
@@ -37,7 +43,6 @@ const logWithColor = (level, message, tags = [], format = '{timestamp} - [{level
   customLogger[level](formattedMessage);
   console[level](formattedMessage);
 };
-
 
 const downloadLogFile = () => {
   const logContent = logMessages.join('\n');
