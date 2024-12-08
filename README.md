@@ -238,13 +238,10 @@ Here are the available NPM scripts for managing your project:
 
 These scripts provide an easy way to manage and maintain your codebase, ensuring that it's well-tested, properly formatted, and following best practices.
 
-
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This project is licensed under the MIT License.
-
-
 
 ```
 This comprehensive README covers everything a user or contributor needs to get started, from setup to understanding the project structure and technologies used. Let me know if you need further customizations!

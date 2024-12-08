@@ -10,10 +10,10 @@ export default [
   {
     languageOptions: {
       globals: {
-        ...globals.browser, // For browser globals like window, document
-        ...globals.node, // For node.js globals like process, require
-        jest: true, // Jest globals
-        describe: true, // Explicitly declare Jest globals if needed
+        ...globals.browser,
+        ...globals.node,
+        jest: true,
+        describe: true,
         test: true,
         expect: true,
       },

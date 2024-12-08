@@ -54,7 +54,7 @@ export default function Content() {
   }
 
   return (
-    <div className="app-container">
+    <div className='app-container'>
       <h1 className="app-title">Technological Foundations Assignment</h1>
       <p className="app-description">
         A beautifully crafted example using React and Webpack.

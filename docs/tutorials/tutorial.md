@@ -5,9 +5,6 @@
 3. [Running the Development Server](#Development-Server)
 4. [Script](#NPM Scripts)
 
-
-
-
 ## Prerequisites
 
 Before you begin, ensure that you have the following installed on your machine:
@@ -17,10 +14,10 @@ Before you begin, ensure that you have the following installed on your machine:
 - **yarn** (Node Package Manager)
 - **Serve** (Optional: for serving production builds locally):
 
-
-    ## Setting-started
+  ## Setting-started
 
 ## 1.clone the repository
+
 Clone the project to your local machine:
 
 ```
@@ -40,10 +37,10 @@ Navigate to the project directory and install the required dependencies:
 
 ```
 cd <project-folder>
-npm install / yarn 
+npm install / yarn
 ```
 
-##  Start Development-Server
+## Start Development-Server
 
 Run the application in development mode:
 
@@ -53,9 +50,6 @@ npm start / yarn start / yarn serve / npm serve
 ```
 
 This will start the Webpack Dev Server and open the app in your default browser.
-
-
-
 
 ## NPM Scripts
 
@@ -78,9 +72,9 @@ Here are the available NPM scripts for managing your project:
 
 - **`npm run pc/ yarn pc`**: Lint and fix the code, then format it using **Prettier**. This is a combined script to ensure your code is both lint-free and well-formatted in one command.
 - **`npm generate-docs / yarn  generate-docs`**: Generate documentation for your project using **JSDoc**. This will generate documentation for your JavaScript and TypeScript files based on the comments in your code.
+
 ---
 
-
-
 ## For Detailed Documentation, Please Refer Here
+
 For a more comprehensive guide on setting up, running, and managing the project, please refer to the full documentation in the [README.md](https://github.com/bronglil/webpack-build/blob/main/README.md).

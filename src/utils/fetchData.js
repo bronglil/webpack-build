@@ -8,7 +8,7 @@ import { logWithColor } from './logger';
  * @async
  * @returns {Promise<Array>} - A promise that resolves to an array of posts from the API.
  * @throws {Error} - Throws an error if the fetch operation fails or if the response is not ok.
- * 
+ *
  * @example
  * fetchData()
  *   .then(data => console.log(data))
@@ -19,7 +19,7 @@ const fetchData = async () => {
   logWithColor('trace', 'Entering fetchData function');
 
   try {
-    logWithColor('debug', `Starting to fetch data from: ${apiUrl}`);
+    logWithColor('debug ', `Starting to fetch data from: ${apiUrl}`);
 
     const response = await fetch(apiUrl);
 
