@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import './Content.css';
-import { logWithColor, downloadLogFile } from '../utils/logger'; // Import the logger utility
 import fetchData from '../utils/fetchData'; // Import the fetchData utility
+import { logWithColor, downloadLogFile } from '../utils/logger'; // Import the logger utility
 
 export default function Content() {
   const [data, setData] = useState(null);
@@ -54,7 +55,7 @@ export default function Content() {
   }
 
   return (
-    <div className='app-container'>
+    <div className="app-container">
       <h1 className="app-title">Technological Foundations Assignment</h1>
       <p className="app-description">
         A beautifully crafted example using React and Webpack.

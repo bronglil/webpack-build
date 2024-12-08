@@ -1,5 +1,5 @@
-import log from 'loglevel';
 import chalk from 'chalk';
+import log from 'loglevel';
 
 // Define the colors for each log level
 const levelColors = {
