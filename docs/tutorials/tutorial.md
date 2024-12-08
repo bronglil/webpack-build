@@ -3,7 +3,7 @@
 1. [Prerequisites](#prerequisites)
 2. [Setting Up the Project](#setting-started)
 3. [Running the Development Server](#Development-Server)
-4. [Script](#NPM Scripts)
+4. [Script](#NPM-Scripts)
 
 
 
