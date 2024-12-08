@@ -18,23 +18,29 @@ customLogger.setLevel('trace'); // Set the default log level to 'trace'
 // Array to hold log messages for later export to file
 const logMessages = [];
 
-// Function to log messages with color based on the level
-const logWithColor = (level, message) => {
+// Function to log messages with color based on the level and tags
+const logWithColor = (level, message, tags = []) => {
   const timestamp = new Date().toISOString();
+
+  // Check if the provided level is valid
+  if (!levelColors[level]) {
+    console.error(`Invalid log level: ${level}. Defaulting to 'info'.`);
+    level = 'info'; // Default to 'info' if invalid
+  }
+
+  const coloredTags = tags.map(tag => chalk.cyan(`[${tag}]`)).join(' ');
   const coloredMessage = levelColors[level](message);
-  const logMessage = `${timestamp} - ${level.toUpperCase()}: ${message}`;
 
-  // Store log message in the array
-  logMessages.push(logMessage);
+  const formattedMessage = `${timestamp} - ${coloredTags} ${level.toUpperCase()}: ${coloredMessage}`;
 
-  // Log the message to the console
-  customLogger[level](coloredMessage);
+  logMessages.push(formattedMessage);
 
-  // Log the message to the browser console
-  console[level](coloredMessage);
+  customLogger[level](formattedMessage);
+
+  console[level](formattedMessage);
 };
 
-// Function to download logs as a text file
+
 const downloadLogFile = () => {
   const logContent = logMessages.join('\n');
   const blob = new Blob([logContent], { type: 'text/plain' });

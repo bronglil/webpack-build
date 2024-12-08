@@ -11,7 +11,7 @@ export default function Content() {
 
   useEffect(() => {
     const loadData = async () => {
-      logWithColor('trace', 'Calling fetchData');
+      logWithColor('trace', 'Calling fetchData', ['APIDATA', 'LOADDATA']);
 
       try {
         const result = await fetchData(); // Call the fetchData function
@@ -30,12 +30,12 @@ export default function Content() {
     loadData();
 
     return () => {
-      logWithColor('trace', 'Cleaning up after fetchData');
+      logWithColor('trace', 'Cleaning up after fetchData', ["CLEANINSTANCE"]);
     };
   }, []);
 
   if (loading) {
-    logWithColor('debug', 'Loading state: Data is being fetched');
+    logWithColor('debug', 'Loading state: Data is being fetched', ["HERE"]);
     return (
       <div className="loading-state">
         <h1>Loading...</h1>
