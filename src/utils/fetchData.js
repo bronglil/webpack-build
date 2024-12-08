@@ -16,18 +16,15 @@ import { logWithColor } from './logger';
  */
 const fetchData = async () => {
   const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
-  logWithColor('trace', 'Entering fetchData function');
+  logWithColor('trace', 'Entering fetchData function', ['FETCH', 'API_CALL']);
 
   try {
-    logWithColor('debug ', `Starting to fetch data from: ${apiUrl}`);
+    logWithColor('debug', `Starting to fetch data from: ${apiUrl}`, ['FETCH', 'API_CALL']);
 
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
-      logWithColor(
-        'warn',
-        `The response was not ok, received status: ${response.status}`,
-      );
+      logWithColor('warn', `The response was not ok, received status: ${response.status}`, ['API_CALL', 'RESPONSE_CHECK']);
       throw new Error('Failed to fetch data');
     }
 
@@ -42,7 +39,7 @@ const fetchData = async () => {
     );
 
     if (result.length === 0) {
-      logWithColor('warn', 'No posts found in the API response');
+      logWithColor('warn', 'No posts found in the API response', ['API_CALL', 'NO_POSTS']);
     }
 
     return result; // Return the fetched data
