@@ -30,12 +30,12 @@ export default function Content() {
     loadData();
 
     return () => {
-      logWithColor('trace', 'Cleaning up after fetchData', ["CLEANINSTANCE"]);
+      logWithColor('trace', 'Cleaning up after fetchData', ['CLEANINSTANCE']);
     };
   }, []);
 
   if (loading) {
-    logWithColor('debug', 'Loading state: Data is being fetched', ["HERE"]);
+    logWithColor('debug', 'Loading state: Data is being fetched', ['HERE']);
     return (
       <div className="loading-state">
         <h1>Loading...</h1>

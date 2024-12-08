@@ -28,7 +28,7 @@ const logWithColor = (level, message, tags = []) => {
     level = 'info'; // Default to 'info' if invalid
   }
 
-  const coloredTags = tags.map(tag => chalk.cyan(`[${tag}]`)).join(' ');
+  const coloredTags = tags.map((tag) => chalk.cyan(`[${tag}]`)).join(' ');
   const coloredMessage = levelColors[level](message);
 
   const formattedMessage = `${timestamp} - ${coloredTags} ${level.toUpperCase()}: ${coloredMessage}`;
@@ -39,7 +39,6 @@ const logWithColor = (level, message, tags = []) => {
 
   console[level](formattedMessage);
 };
-
 
 const downloadLogFile = () => {
   const logContent = logMessages.join('\n');
