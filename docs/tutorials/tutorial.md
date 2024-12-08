@@ -3,7 +3,7 @@
 1. [Prerequisites](#prerequisites)
 2. [Setting Up the Project](#setting-started)
 3. [Running the Development Server](#Development-Server)
-4. [Script](#NPM Scripts)
+4. [Script](#NPM-Scripts)
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ npm install / yarn
 Run the application in development mode:
 
 ```
-npm start / yarn start / yarn serve / npm serve
+npm run start / yarn start / yarn serve / npm serve
 
 ```
 
