@@ -1,5 +1,5 @@
-
 # Name
+
 TFSD-Assignment
 
 # Project Description
@@ -20,7 +20,7 @@ Use the package manager [npm](https://www.npmjs.com/) to install foobar.
 
 ```bash
 cd webpack-build
-npm install 
+npm install
 ```
 
 ## Start the Development Server
@@ -31,6 +31,7 @@ Run the application in development mode:
 npm run start
 
 ```
+
 ## How It Works
 
 Run Eslint/Formatter/Fix-Eslint
@@ -59,7 +60,6 @@ npm run generate-docs
 
 Node Version: `^18.18.0`
 
-
 ## Usage
 
 You can use the following commands to maintain code quality and documentation in the project: `npm run lint:fix` automatically fixes issues found by ESLint, ensuring that your code follows the defined linting rules. npm run format formats your code according to the specified style guide (e.g., Prettier). `npm run pc` likely runs a custom script, such as running tests or building the project, but the exact behavior depends on its setup. `npm run prepare` typically sets up hooks (like Husky) or other preparation tasks before a commit or deployment. Finally, `npm run generate-docs` generates the documentation for your project, helping you keep the docs up to date.
@@ -67,7 +67,6 @@ You can use the following commands to maintain code quality and documentation in
 ## Config
 
 ### ESLint: `.eslint.config.json`
-
 
 This snippet is part of the setup for an **ESLint** configuration in a JavaScript or React project. It imports several necessary packages to ensure that the code follows best practices and standards:
 
@@ -80,7 +79,7 @@ By using these plugins, you can enforce code style, maintainability, and prevent
 
 ### Prettier `.prettierrc.json`
 
- Prettier Configuration
+Prettier Configuration
 
 The following configuration is part of the Prettier setup for the project:
 
@@ -89,7 +88,9 @@ The following configuration is part of the Prettier setup for the project:
   "singleQuote": true
 }
 ```
-### Husky: 
+
+### Husky:
+
 Automates Git hooks (e.g., pre-commit, pre-push) to enforce code quality checks like linting or formatting before code is committed.
 
 ```
