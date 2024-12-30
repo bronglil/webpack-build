@@ -3,7 +3,7 @@ name: Automated Release
 on:
   push:
     tags:
-      - '*' 
+      - '*' # Trigger the workflow on any new tag creation
 
 jobs:
   release:
@@ -36,10 +36,15 @@ jobs:
       - name: Generate Changelog
         id: changelog
         run: |
-          # Get the last tag
-          LAST_TAG=$(git describe --tags --abbrev=0 HEAD^)
-          # Generate the changelog between the last and current tags
-          CHANGELOG=$(git log $LAST_TAG..HEAD --oneline --no-merges)
+          # Check if there is a previous tag
+          LAST_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            # No previous tag found; use the entire commit history
+            CHANGELOG=$(git log --oneline --no-merges)
+          else
+            # Generate changelog since the last tag
+            CHANGELOG=$(git log $LAST_TAG..HEAD --oneline --no-merges)
+          fi
           echo "CHANGELOG=$CHANGELOG" >> $GITHUB_ENV
           echo "$CHANGELOG"
 
@@ -62,10 +67,10 @@ jobs:
           name: Build Artifacts
           path: ./build
 
-      # Step 9: Upload Test Reports (Optional)
+      # Step 9: Upload Test Reports
       - name: Upload Test Reports
-        if: always() # Always upload reports even if tests fail (optional)
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: Test Reports
-          path: ./test-reports 
+          path: ./test-reports/junit.xml
