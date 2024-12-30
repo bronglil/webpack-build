@@ -31,4 +31,4 @@ jobs:
           yarn add react@${{ matrix.react-version }} react-dom@${{ matrix.react-version }} --exact
 
       - name: Run unit tests
-        run: yarn test --ci --watchAll=false
+        run: yarn test --ci --watchAll=false 
