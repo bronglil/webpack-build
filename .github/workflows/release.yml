@@ -43,10 +43,10 @@ jobs:
             CHANGELOG=$(git log --oneline --no-merges)
           else
             # Generate changelog since the last tag
-            CHANGELOG=$(git log $LAST_TAG..HEAD --oneline --no-merges)
+            CHANGELOG=$(git log "$LAST_TAG"..HEAD --oneline --no-merges)
           fi
           echo "CHANGELOG=$CHANGELOG" >> $GITHUB_ENV
-          echo "$CHANGELOG"
+        shell: bash
 
       # Step 7: Create GitHub Release
       - name: Create GitHub Release
@@ -59,6 +59,8 @@ jobs:
             ${{ env.CHANGELOG }}
           draft: false
           prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Step 8: Upload Build Artifacts
       - name: Upload Build Artifacts
@@ -66,11 +68,16 @@ jobs:
         with:
           name: Build Artifacts
           path: ./build
+        if: success()
 
-      # Step 9: Upload Test Reports
+      # Step 9: Generate Test Reports Directory (if missing)
+      - name: Ensure Test Reports Directory Exists
+        run: mkdir -p ./test-reports
+
+      # Step 10: Upload Test Reports
       - name: Upload Test Reports
-        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: Test Reports
           path: ./test-reports/junit.xml
+        if: always()
