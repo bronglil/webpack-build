@@ -1,0 +1,71 @@
+name: Automated Release
+
+on:
+  push:
+    tags:
+      - '*' 
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      # Step 3: Install dependencies using Yarn
+      - name: Install Dependencies
+        run: yarn install
+
+      # Step 4: Run Tests
+      - name: Run Tests
+        run: yarn test --watchAll=false
+
+      # Step 5: Build the project
+      - name: Build the Project
+        run: yarn build
+
+      # Step 6: Generate Changelog
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          # Get the last tag
+          LAST_TAG=$(git describe --tags --abbrev=0 HEAD^)
+          # Generate the changelog between the last and current tags
+          CHANGELOG=$(git log $LAST_TAG..HEAD --oneline --no-merges)
+          echo "CHANGELOG=$CHANGELOG" >> $GITHUB_ENV
+          echo "$CHANGELOG"
+
+      # Step 7: Create GitHub Release
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          body: |
+            ## Changelog
+            ${{ env.CHANGELOG }}
+          draft: false
+          prerelease: false
+
+      # Step 8: Upload Build Artifacts
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build Artifacts
+          path: ./build
+
+      # Step 9: Upload Test Reports (Optional)
+      - name: Upload Test Reports
+        if: always() # Always upload reports even if tests fail (optional)
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Reports
+          path: ./test-reports 
