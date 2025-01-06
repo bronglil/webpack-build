@@ -1,34 +1,38 @@
+# .github/workflows/docs.yml
 name: Deploy Documentation
 
 on:
-    push:
-      branches:
-        - main
-    pull_request:
-      branches:
-        - main
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
 
 jobs:
-  deploy:
+  deploy-docs:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' 
+          node-version: '18'
 
       - name: Install Dependencies
-        run: yarn install 
+        run: |
+          cd docs  # Assuming your docs are in a /docs directory
+          yarn install
 
-      - name: Generate Documentation
-        run: yarn run generate-docs 
+      - name: Build Documentation
+        run: |
+          cd docs
+          yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  
+          publish_dir: ./docs/build  # Adjust based on your docs build output directory
+          force_orphan: true
