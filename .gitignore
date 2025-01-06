@@ -2,5 +2,5 @@
 node_modules/
 
 # Build and dist files
-dist/
-build/
+# dist/
+# build/

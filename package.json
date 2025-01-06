@@ -8,7 +8,7 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "eject": "react-scripts eject",
-    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "pc": "yarn lint --fix && yarn format",

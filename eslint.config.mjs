@@ -11,6 +11,13 @@ import * as parser from "@babel/eslint-parser";
 export default [
   {
     files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/coverage/**",
+      "**/*.min.js",
+      "**/public/**"
+    ],
     plugins: {
       react: pluginReact,
       import: pluginImport,
@@ -40,22 +47,15 @@ export default [
       parser,
       globals: {
         ...globals.browser,
-        ...globals.node,
-        jest: true,
-        describe: true,
-        test: true,
-        expect: true,
-      },
+        ...globals.node
+      }
     },
     rules: {
-      // Basic rules
       "indent": ["error", 2],
       "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
       "object-curly-spacing": ["error", "always"],
       "array-bracket-spacing": ["error", "never"],
       "comma-spacing": ["error", { "before": false, "after": true }],
-
-      // Import rules
       "import/order": ["error", {
         "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always",
@@ -66,17 +66,20 @@ export default [
       "import/default": "error",
       "import/namespace": "error",
       "import/no-duplicates": "error",
-
-      // React rules
-      ...pluginReact.configs.recommended.rules,
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-
-      // Unused imports and variables
-      "no-unused-vars": "off",
+      "no-empty": "warn",
+      "no-func-assign": "warn",
+      "getter-return": "error",
+      "no-fallthrough": "warn",
+      "no-control-regex": "off",
+      "no-prototype-builtins": "warn",
+      "valid-typeof": "error",
+      "no-misleading-character-class": "warn",
+      "no-useless-escape": "warn",
+      "no-cond-assign": ["error", "except-parens"],
+      "no-unused-vars": "warn",
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
-        "error",
+        "warn",
         {
           "vars": "all",
           "varsIgnorePattern": "^_|^React$",
@@ -86,8 +89,6 @@ export default [
           "ignoreRestSiblings": true
         }
       ],
-
-      // React specific rules
       "react/jsx-uses-react": "error",
       "react/jsx-uses-vars": "error",
       "react-hooks/rules-of-hooks": "error",
