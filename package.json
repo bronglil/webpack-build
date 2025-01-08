@@ -13,7 +13,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "pc": "yarn lint --fix && yarn format",
     "prepare": "husky",
-    "generate-docs": "jsdoc src --destination docs"
+    "generate-docs": "jsdoc -c jsdoc.config.json"
   },
   "keywords": [],
   "author": "sajid",

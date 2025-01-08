@@ -1,30 +1,31 @@
-// src/App.js
-
 /**
- * The main entry point of the React application.
- * This component includes the Navbar, Sidebar, and main Content.
- *
- * @file App.js
- * @module App
- * @requires React
- * @requires ./App.css
- * @requires ./components/Content
- * @requires ./components/Navbar
- * @requires ./components/Sidebar
+ * @file App.js - Main entry point of the React application
  */
 
 import React from 'react';
-
 import './App.css';
 import Content from './components/Content.jsx';
 import Navbar from './components/Navbar.jsx';
 import Sidebar from './components/Sidebar.jsx';
 
 /**
- * Renders the main application structure, including the Navbar, Sidebar, and Content.
- *
- * @component
- * @returns {JSX.Element} The rendered App component.
+ * Main application component that renders the overall layout.
+ * Combines Navbar, Sidebar, and Content components into a cohesive interface.
+ * 
+ * @function App
+ * @returns {JSX.Element} A React component that renders the main application structure
+ * 
+ * @example
+ * // Basic usage:
+ * <App />
+ * 
+ * @example
+ * // Inside index.js:
+ * import App from './App';
+ * import { createRoot } from 'react-dom/client';
+ * 
+ * const root = createRoot(document.getElementById('root'));
+ * root.render(<App />);
  */
 function App() {
   return (
