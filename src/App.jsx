@@ -3,7 +3,7 @@
 /**
  * The main entry point of the React application.
  * This component includes the Navbar, Sidebar, and main Content.
- * 
+ *
  * @file App.js
  * @module App
  * @requires React
@@ -22,7 +22,7 @@ import Sidebar from './components/Sidebar.jsx';
 
 /**
  * Renders the main application structure, including the Navbar, Sidebar, and Content.
- * 
+ *
  * @component
  * @returns {JSX.Element} The rendered App component.
  */

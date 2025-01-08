@@ -25,9 +25,6 @@ jobs:
       - name: Generate Documentation
         run: yarn generate-docs
 
-      - name: Overwrite index.html with App.jsx.html
-        run: cp ./docs/App.jsx.html ./docs/index.html
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
